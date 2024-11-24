@@ -5,6 +5,10 @@
   "license": "MIT",
   "description": "Initialize a simple project typescript with nodemon",
   "bin": "./bin.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabrielalves262/init-nodemon-ts"
+  },
   "dependencies": {
     "yargs": "^17.7.2"
   }
