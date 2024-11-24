@@ -1,0 +1,11 @@
+{
+  "name": "init-nodemon-ts",
+  "version": "1.0.1",
+  "author": "Gabriel Campos <gabrielalves262@hotmail.com>",
+  "license": "MIT",
+  "description": "Initialize a simple project typescript with nodemon",
+  "bin": "./bin.js",
+  "dependencies": {
+    "yargs": "^17.7.2"
+  }
+}
