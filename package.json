@@ -1,6 +1,6 @@
 {
   "name": "init-nodemon-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Gabriel Campos <gabrielalves262@hotmail.com>",
   "license": "MIT",
   "description": "Initialize a simple project typescript with nodemon",
