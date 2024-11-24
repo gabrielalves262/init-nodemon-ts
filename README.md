@@ -2,6 +2,10 @@
 
 Initialize a node project using typescript and nodemon
 
+- nodemon
+- typescript
+- express
+
 ## Install
 
 Execute the command below in your terminal
@@ -27,4 +31,10 @@ Execute the command below to create a folder and initialize the project inside t
 ```sh
 # initialize the project into current folder
 $ npx init-nodemon-repo my-project
+```
+
+To add express, insert the argument `--express` in the command
+
+```sh
+$ npx init-nodemon-repo my-project --express
 ```
