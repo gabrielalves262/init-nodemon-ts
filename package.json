@@ -1,15 +1,37 @@
 {
   "name": "init-nodemon-ts",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "author": "Gabriel Campos <gabrielalves262@hotmail.com>",
   "license": "MIT",
   "description": "Initialize a simple project typescript with nodemon",
-  "bin": "./bin.js",
+  "bin": "./dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/gabrielalves262/init-nodemon-ts"
   },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf ./dist && tsc && cp -ru ./templates/**/ dist/templates/"
+  },
   "dependencies": {
+    "conf": "^13.0.1",
+    "prompts": "^2.4.2",
     "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/cross-spawn": "^6.0.6",
+    "@types/node": "^22.9.3",
+    "@types/prompts": "^2.4.9",
+    "@types/validate-npm-package-name": "^4.0.2",
+    "@vercel/ncc": "^0.38.3",
+    "async-sema": "^3.1.1",
+    "commander": "^12.1.0",
+    "cross-spawn": "^7.0.6",
+    "fast-glob": "^3.3.2",
+    "picocolors": "^1.1.1",
+    "typescript": "^5.7.2",
+    "validate-npm-package-name": "^6.0.0"
   }
 }
