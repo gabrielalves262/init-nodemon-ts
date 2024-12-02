@@ -9,8 +9,8 @@ import { install } from "../helpers/install";
 const devDependencies = ['typescript', 'nodemon', 'ts-node', '@types/node']
 const dependencies = ['dotenv', 'picocolors']
 
-const expressDeps = ['express', 'cors']
-const devExpressDeps = ['@types/express', '@types/cors']
+const expressDeps = ['express', 'cors', 'envalid', 'bcryptjs', 'jsonwebtoken', 'zod']
+const devExpressDeps = ['@types/express', '@types/cors', '@types/jsonwebtoken']
 
 const gitignore = ['node_modules', 'dist', '.env']
 
@@ -58,7 +58,7 @@ export const installTemplate = async ({
     scripts: {
       dev: "nodemon",
       build: "tsc",
-      start: "node dist/main.js"
+      start: `node dist/${template === 'express' ? 'server' : 'main'}.js`
     },
     dependencies: {},
     devDependencies: {},
@@ -78,8 +78,12 @@ export const installTemplate = async ({
       strict: true,
       skipLibCheck: true,
       outDir: "./dist",
-      rootDir: "./src"
-    }
+      rootDir: "./src",
+    },
+    exclude: [
+      "dist",
+      "node_modules",
+    ]
   }
 
   await fs.writeFile(
@@ -91,7 +95,7 @@ export const installTemplate = async ({
     watch: ["src"],
     ext: "ts,json",
     ignore: ["src/**/*.spec.ts"],
-    exec: "ts-node ./src/main.ts"
+    exec: `ts-node ./src/${template === 'express' ? 'server' : 'main'}.ts`
   }
 
   await fs.writeFile(
