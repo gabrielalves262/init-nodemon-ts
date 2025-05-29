@@ -13,4 +13,4 @@ const app = new App([
   new HomeController()
 ])
 
-app.listem()
+app.listen()
